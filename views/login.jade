@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .content.login
+    .login-wrraper
+      form(name="login-form")
+        span(class="help-block error")
+        input(class="text-input" type="text" name="login" placeholder="login")
+        input(class="text-input" type="password" name="password" placeholder="password")
+
+        button(type="submit") Login
+
+  script(type='text/javascript').
+    $(document.forms['login-form']).on('submit', function (e) {
+      e.preventDefault()
+
+      var form = $(this);
+
+      $('.error', form).html('');
+      $(":submit", form).text("loading");
+
+      $.ajax({
+        url: "/login",
+        method: "POST",
+        data: form.serialize(),
+        complete: function () {
+          $(":submit", form).text("reset");
+        },
+        statusCode: {
+          200: function () {
+            form.html("Вы вошли в сайт").addClass('alert-success');
+            window.location.href = "/feed";
+          },
+          403: function (jqXHR) {
+            var error = JSON.parse(jqXHR.responseText);
+            $('.error', form).html(error.message);
+          }
+        }
+      });
+    });

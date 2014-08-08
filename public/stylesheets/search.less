@@ -1,0 +1,130 @@
+.search {
+  border-bottom: 1px solid #a9a9a9;
+
+  .filter-link {
+    font-weight: bold;
+    cursor: pointer;
+    float: left;
+    font-size: 11px;
+    line-height: 1;
+    color: #1e3032;
+    padding: 30px;
+    background-color: #92d0e5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    .transition(background-color 0.3s ease);
+
+    &:hover {
+      text-decoration: none;
+      background-color: darken(#92d0e5, 10%);
+    }
+  }
+
+  .search-input {
+    position: relative;
+    height: 70px;
+    margin-left: 105px;
+
+    &::-webkit-input-placeholder {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: italic;
+      color: #b8b8b8;
+    }
+
+    &:-moz-placeholder {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: italic;
+      color: #b8b8b8;
+    }
+    &::-moz-placeholder {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: italic;
+      color: #b8b8b8;
+    }
+    &:-ms-input-placeholder {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: italic;
+      color: #b8b8b8;
+    }
+
+    input {
+      font-size: 18px;
+      width: 100%;
+      height: 70px;
+      border: none;
+      padding-left: 40px;
+
+      outline: none;
+
+      &:focus {
+        outline-color: #92d0e5;
+
+        & + .search-icon {
+          .transform(rotate(75deg));
+        }
+      }
+    }
+
+    .clear-field {
+      font-size: 0;
+      margin: 0;
+      position: absolute;
+      top: 23px;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+      padding: 10px;
+      background: url("../images/x1.png") 5px 5px no-repeat;
+      border: 1px solid #f4f3f1;
+
+      .transition(0.35s ease);
+      border-radius: 10px;
+
+      &:hover {
+        .transform(rotate(270deg));
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 21px;
+    left: 13px;
+    z-index: 20;
+    width: 20px;
+    height: 20px;
+    background: url("../images/search-icon.png") 0 0 no-repeat;
+    .transition(0.35s ease);
+  }
+}
+
+.top-message {
+  font-size: 17px;
+  font-style: italic;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 15px 25px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  .transition(opacity 0.35s ease, min-height 2s ease, padding 2s ease);
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: @left_column_width;
+  }
+  &.js-hide {
+    opacity: 0;
+    min-height: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Montserrat:400,700|Cardo:400,400italic,700' rel='stylesheet' type='text/css')
+    script(src="/vendor/jquery/dist/jquery.min.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    <!--[if gt IE 9]>
+    script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+    script(src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js")
+    <!--<![endif]-->
+  body
+    .wrapper
+      .left-column
+        aside.navigation.sans-serif
+          a.logo(href="/")
+          nav
+            ul.list-unstyled
+              li
+                a(href="/feed") Feed
+              li
+                a(href="/profile") Profile
+              li
+                if user
+                  form(method="POST" action="/logout")
+                    button(type="submit" class="logout sans-serif") logout
+                else
+                  a(href="/login") Login
+            .clear
+      .right-column
+        .content-wrapper
+          include ./partials/search.jade
+          include ./partials/filter.jade
+          block content
+
+    script(src="/javascripts/script.js")

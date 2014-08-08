@@ -1,0 +1,103 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #44474e;
+  background-color: #3a3a3a;
+}
+
+a {
+  color: #40444b;
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8d9199;
+}
+
+.clear {
+  font-size:0;
+  clear:both;
+  overflow:hidden;
+  line-height:0;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.left-column {
+  position: fixed;
+  width: @left_column_width;
+  height: 100%;
+  background: black;
+  z-index: 1;
+}
+
+.right-column {
+  width: 100%;
+  height: 100%;
+  padding-left: @left_column_width;
+}
+
+.navigation {
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-top: 140px;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+  background: #0f0f0f url("../images/aside-bg.jpg") 0 0 no-repeat;
+  text-transform: uppercase;
+  text-align: center;
+
+  nav a, .logout {
+    display: block;
+    padding: 35px 0;
+    color: #5c5c5c;
+    text-decoration: none;
+    cursor: pointer;
+    .transition(all 0.3s ease);
+
+    &:hover, &.current {
+      color: #fff;
+      background-color: #262626;
+    }
+  }
+  .logout {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #0f0f0f;
+  }
+}
+
+.logo {
+  display: block;
+  width: 76px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.content {
+  position: relative;
+  padding: 20px 0 20px 15px;
+  background-color: #e6e6e6;
+  left: -2000px;
+  overflow: hidden;
+
+  .transition(left 0.5s cubic-bezier(0.26, 1, 0.48, 1));
+
+  &.open {
+    left: 0;
+  }
+}

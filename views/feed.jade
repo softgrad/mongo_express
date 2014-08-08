@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .content.feed
+    each user in users
+      .user-plate
+        .user-plate-shell
+          .user-photo
+            img(src="images/#{user.photo}" height="120" width="120" alt: "")
+          .name= user.name
+          .info= user.age + ' / ' + user.info
+          .from= user.location
+          .interests
+            .interests-title
+              | Top interests
+              ul.list-unstyled
+                each interest in user.interests
+                  li= interest

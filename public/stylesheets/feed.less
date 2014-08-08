@@ -1,0 +1,70 @@
+.feed {
+  .name, .info, .interests-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .info {
+    font-size: 10px;
+  }
+
+  .from {
+    font-size: 12px;
+    font-style: italic;
+    color: #b7b7b7;
+    margin: 30px 0;
+  }
+
+  .user-plate {
+    display: inline-block;
+    width: 270px;
+    margin: 10px;
+    padding: 40px 0 0;
+    text-align: center;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    .transition(background-color 0.3s ease);
+
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    .interests-title {
+      font-size: 10px;
+      color: #b9b9b9;
+      padding-bottom: 13px;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .interests ul {
+      font-size: 11px;
+      font-style: italic;
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      li {
+        padding: 6px 0;
+      }
+    }
+  }
+
+  .user-photo {
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-radius: 100px;
+    img {
+      border-radius: 100px;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+extends layout
+
+block content
+  .content.profile
+    .profile-shell
+      .profile-info
+        .user-photo
+          .photo-shell
+            img(src="images/#{user.photo}" alt="" width="120" hight="120")
+          .relationship-title Relationship status
+          .relationship-status Single
+        .profile-description-wrapper
+          .profile-description
+            .name-wrapper
+              .name= user.name
+                .v
+                  ins
+                  | Verified account
+            .info Age #{user.age} / #{user.info}
+            .from= user.location
+          .about
+            each interest in user.interests
+              = interest + ' '
+      ul.confirm.list-unstyled
+        li.conf-mail.confirmed
+          ins
+            span
+        li.conf-fb.confirmed
+          ins
+            span
+        li.conf-phone.confirmed
+          ins
+            span
+        li.conf-info
+          .demo
+            small DEMO reaction
+            | Expand recomendations
+          ins
+            span
+      .profile-details
+        ul.list-unstyled
+          li.current
+            a.sans-serif(href="#photos") Photos
+          li
+            a.sans-serif(href="#details") Details
+          li
+            a.sans-serif(href="#interests") Interests
+          li
+            a.sans-serif(href="#history") History
+          li
+            a.sans-serif(href="#lookingFor") Looking for
+        .profile-details-content-wrapper
+          .profile-details-content
+            .photos-content
+              .profile-image
+                img(src="images/album-photo1.jpg" alt="" width="273" height="183")
+              .profile-image
+                img(src="images/album-photo2.jpg" alt="" width="275" height="183")
+              .profile-image
+                img(src="images/album-photo3.jpg" alt="" width="123" height="183")
+              .profile-image
+                img(src="images/album-photo4.jpg" alt="" width="205" height="183")
+              .profile-image
+                img(src="images/album-photo5.jpg" alt="" width="274" height="183")
+              .profile-image
+                img(src="images/album-photo6.jpg" alt="" width="192" height="183")
+              .clear
+            .details-content.text
+              h1 Details
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              .clear
+            .interests-content.text
+              h1 Interests
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              .clear
+            .history-content.text
+              h1 History
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              .clear
+            .looking-for-content.text
+              h1 Looking for
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, delectus, quisquam culpa doloremque corporis aliquid odio cumque minima possimus sit nam iste dolorum at quaerat autem provident mollitia id praesentium.
+              .clear
